@@ -52,4 +52,3 @@ public class Distance
 
 //math.sqrt
 //math.pow
-//hihihhih
