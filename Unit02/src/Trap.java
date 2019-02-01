@@ -10,7 +10,7 @@ public class Trap
 	{
 		double trape = 0;
 		double total = base1 + base2;
-		double total2 = (double) 0.5 * total;
+		double total2 = 0.5 * total;
 		trape = total2 * height;
 		return trape;
 	}
