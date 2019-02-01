@@ -17,6 +17,7 @@ public class Distance
 
 	public Distance()
 	{
+		
 	}
 
 	public Distance(int x1, int y1, int x2, int y2)
@@ -44,6 +45,11 @@ public class Distance
 
 	public String toString()
 	{
+		
 		return "";
 	}
 }
+
+//math.sqrt
+//math.pow
+//hihihhih
