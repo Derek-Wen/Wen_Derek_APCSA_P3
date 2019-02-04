@@ -48,7 +48,7 @@ public class Distance
 	
 	public void print()
 	{
-		System.out.println("Distance: " + distance);
+		System.out.println("Distance: " + String.format("%.3f", distance) + "\n");
 	}
 	
 	//complete print or the toString
