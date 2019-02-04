@@ -46,7 +46,7 @@ public class Distance
 	
 	public double getDistance()
 	{
-		return "0.0";
+		return distance;
 		
 	}
 	
@@ -60,7 +60,7 @@ public class Distance
 	public String toString()
 	{
 		
-		return "";
+		return "the distance is: " + distance;
 	}
 }
 
