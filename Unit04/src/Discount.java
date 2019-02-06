@@ -1,10 +1,10 @@
 //(c) A+ Computer Science
 //www.apluscompsci.com
 
-//Name - 
-//Date -
-//Class -
-//Lab  -
+//Name - Derek Wen
+//Date - 2/6/2019
+//Class - APCSA
+//Lab  - Discount
 
 import static java.lang.System.*;
 import java.util.Scanner;
@@ -17,11 +17,6 @@ public class Discount
 	//			if the bill is >2000, the bill receives a 15% discount
 	public static double getDiscountedBill(double bill)
 	{
-		if (bill > 2000) {
-			return bill * 0.85;
-		}
-		out.print("Bill after discount :: " + bill);
-		return bill;
-		
+		return bill > 2000 ? bill * 0.85 : bill;
 	}
 }
