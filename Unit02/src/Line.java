@@ -7,9 +7,9 @@ public class Line
 {
 	public static double getSlope( int x1, int y1, int x2, int y2 )
 	{
-		int slope = 0;
-		int top = y2 - y1;
-		int bottom = x2 - x1;
+		double slope = 0;
+		double top = y2 - y1;
+		double bottom = x2 - x1;
 		slope = top / bottom;
 		return slope;
 	}
