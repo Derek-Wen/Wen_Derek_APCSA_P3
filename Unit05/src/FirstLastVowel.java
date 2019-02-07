@@ -18,4 +18,4 @@ public class FirstLastVowel
 	   }
 		   return "no";
 	}
-}	
+}
