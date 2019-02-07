@@ -16,13 +16,13 @@ public class DistanceRunner
 	{
 		Scanner keyboard = new Scanner(System.in);
 		
-		System.out.println("Enter X1: ");
+		System.out.print("Enter X1: ");
 		int xOne = keyboard.nextInt();
-		System.out.println("Enter Y1: ");
+		System.out.print("Enter Y1: ");
 		int yOne = keyboard.nextInt();
-		System.out.println("Enter X2: ");
+		System.out.print("Enter X2: ");
 		int xTwo = keyboard.nextInt();
-		System.out.println("Enter Y2: ");
+		System.out.print("Enter Y2: ");
 		int yTwo = keyboard.nextInt(); 
 		
 		Distance test = new Distance();
