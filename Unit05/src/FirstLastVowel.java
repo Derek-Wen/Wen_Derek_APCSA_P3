@@ -9,14 +9,10 @@ public class FirstLastVowel
    public static String go( String a )
 	
    {
-	   String first = a.substring(0,1);
-	   String last = a.substring(a.length() - 1);
-	   if (first = a.startsWith("a") || a.startsWith("e") || a.startsWith("i") || a.startsWith("o") || a.startsWith("u")) {
+	   String str  = a.toLowerCase();
+	   if (str.startsWith("a") || str.startsWith("e") || str.startsWith("i") || str.startsWith("o") || str.startsWith("u") || str.endsWith("a") || str.endsWith("e") || str.endsWith("i") || str.endsWith("o") || str.endsWith("u")) {
 		   return "yes";
 	   }
-	   else if (last = a.startsWith("a") || a.startsWith("e") || a.startsWith("i") || a.startsWith"(o") || a.startsWith("u")) {
-		   return "yes";
-	   }
-		   return "no";
+	   return "no";
 	}
 }
