@@ -31,7 +31,7 @@ public class WordsCompare
 
 	public void compare()
 	{
-		int compare = wordOne.compareTo(wordTwo);
+		compare = wordOne.compareTo(wordTwo);
 	}
 
 	public String toString()
