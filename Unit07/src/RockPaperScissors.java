@@ -12,18 +12,28 @@ public class RockPaperScissors
 
 	public RockPaperScissors()
 	{
+		setPlayers("","");
 	}
 
 	public RockPaperScissors(String player)
 	{
+		setPlayers(player);
 	}
 
 	public void setPlayers(String player)
 	{
+		playChoice = player;
 	}
 
 	public String determineWinner()
 	{
+		if (playChoice.equals(compChoice)) {
+			String winner = "!Draw Game!";
+			return winner;
+		}
+		if (playChoice.equals("R") && compChoice.equals("P")) {
+			String winner = "!Player wins";
+		}
 		String winner="";
 		return winner;
 	}
