@@ -1,7 +1,7 @@
 //(c) A+ Computer Science
 //www.apluscompsci.com
-//Name -
-//Date -
+//Name - Derek Wen
+//Date - 2/25/2019
 
 public class OddToEvenRunner
 {
