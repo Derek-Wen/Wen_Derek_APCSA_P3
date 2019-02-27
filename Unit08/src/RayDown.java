@@ -10,8 +10,8 @@ public class RayDown
 	public static boolean go(int[] numArray)
 	{
 		int count = 0;
-		for (int i = 0; i < numArray.length; i++) {
-			if (numArray[i+1] > numArray[i]) {
+		for (int i = 0; i < numArray.length-1; i++) {
+			if (numArray[i+1] < numArray[i]) {
 				count++;
 			}
 			else {
