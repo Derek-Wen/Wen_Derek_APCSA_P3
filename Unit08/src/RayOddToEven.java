@@ -7,23 +7,20 @@ public class RayOddToEven
 {
 	public static int go(int[] ray)
 	{
-		int even = -1;
-		int odd = -1;
-		int distance = 0;
-		for (int i = 0; i < ray.length -1; i++) {
-			if (ray[i] % 2 == 1) {
-				odd = i;
+		int oddCount = -1;
+		int evenCount = -1;
+		boolean isOdd = false;
+		for (int i = 0; i < ray.length-1; i++) {
+			if(ray[i] % 2 == 1 && oddCount < 0){
+				oddCount = i;
+				isOdd = true;
 			}
-			if (ray[i] % 2 == 0 && odd >= 0) {
-				even = i;
-				break;
+			if(ray[i] % 2 ==0 && evenCount <0 && isOdd){
+				evenCount = i;
 			}
-			
 		}
-		distance = even - odd;
-		if (odd > 0 && even > 0) {
-			return distance;
-		}
-		return -1;
+		if(oddCount == -1 || evenCount == -1) return -1;
+		return Math.abs(evenCount - oddCount);
+		
 	}
 }
