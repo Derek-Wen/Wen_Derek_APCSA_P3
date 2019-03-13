@@ -1,6 +1,6 @@
 //(c) A+ Computer Science
 //www.apluscompsci.com
-//Name -
+//Name - Derek Wen
 
 import java.util.Arrays;
 
@@ -10,45 +10,48 @@ public class Doggies
 
 	public Doggies(int size)
 	{
-		pups = new Dog[size];
 		//point pups at a new arry of Dog
-		
+		pups = new Dog[size];
 	}
 	
 	public void set(int spot, int age, String name)
 	{
-		Dog var1 = new Dog(age, name);
-		if (0 < spot  && spot < pups.length -1) {
-			pups[spot] = var1;
-		}
 		//put a new Dog in the array at spot 
-		//make sure spot is in bounds		
+		Dog d = new Dog(age, name);
+		
+		//make sure spot is in bounds
+		if(spot >= 0 && spot < pups.length) {
+			pups[spot] = d;
+		}
 	}
 
 	public String getNameOfOldest()
 	{
-		int largest = 0;
-		String largestname="";
-		for (int i = 0; i < pups.length; i++) {
-			if (pups[i].getAge() > largest) {
-				largest = pups[i].getAge();
-				largestname= pups[i].getName();
+		int greatest = pups[0].getAge();
+		int greatPup = 0;
+		for(int i = 0; i < pups.length; i++) {
+			if(greatest < pups[i].getAge()) {
+				greatest = pups[i].getAge();
+				greatPup++;
 			}
 		}
-		return null;
+		
+		return pups[greatPup].getName();
 	}
 
 	public String getNameOfYoungest()
 	{
-		int smallest = 0;
-		String smallestname="";
-		for (int i = 0; i < pups.length; i++) {
-			if (pups[i].getAge() < smallest) {
-				smallest = pups[i].getAge();
-				smallestname = pups[i].getName();
+		
+		int least = pups[0].getAge();
+		int leastPup = 0;
+		for(int i = 0; i < pups.length; i++) {
+			if(least > pups[i].getAge()) {
+				least = pups[i].getAge();
+				leastPup++;
 			}
 		}
-		return smallestname;
+		
+		return pups[leastPup].getName();
 	}
 
 	public String toString()
