@@ -1,24 +1,41 @@
 //(c) A+ Computer Science
 //www.apluscompsci.com
-//Name -
+//Name - Derek Wen
 
 import static java.lang.System.*;
 
 public class Word implements Comparable<Word>
 {
 	private String word;
+	private int length;
 
 	public Word( String s )
 	{
+		word = s;
+		length = s.length();
 	}
 
 	public int compareTo( Word rhs )
 	{		
-		return 0;
+		int sizeA = length;
+		int sizeB = rhs.word.length();
+		
+		if (sizeA > sizeB)
+		{
+			return 1;
+		}
+		else if (sizeB > sizeA)
+		{
+			return -1;
+		}
+		else
+		{
+			return word.compareTo(rhs.word);
+		}
 	}
 
 	public String toString()
 	{
-		return "";
+		return word;
 	}
 }
