@@ -123,15 +123,6 @@ public class ElevensBoard extends Board {
 				hasKing = true;
 			}
 		}
-		
-		if ((hasJack = true) && (hasQueen = true) && (hasKing = true))
-		{
-			return true;
-		}
-		else
-		{
-			return false;
-		}
-
+		return hasJack && hasQueen && hasKing;
 	}
 }
