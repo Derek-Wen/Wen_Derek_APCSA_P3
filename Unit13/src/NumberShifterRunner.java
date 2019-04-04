@@ -1,6 +1,6 @@
 //(c) A+ Computer Science
 //www.apluscompsci.com
-//Name -
+//Name - Derek Wen
 
 import java.util.Arrays;
 import java.util.Scanner;
@@ -12,9 +12,7 @@ public class NumberShifterRunner
 {
 	public static void main( String args[] ) throws IOException
 	{
-		//add test cases
+		int[] ray = NumberShifter.makeLucky7Array(8);
+		System.out.println(Arrays.toString(ray));
 	}
 }
-
-
-
