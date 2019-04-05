@@ -12,7 +12,7 @@ public class WordSortTwoRunner
 {
 	public static void main( String args[] ) throws IOException
 	{
-		Scanner file = new Scanner(new File("File Location Here"));
+		Scanner file = new Scanner(new File("C:\\Users\\wend8470\\Documents\\GitHub\\Wen_Derek_APCSA_P3\\Unit13\\src\\wordsorttwo.dat"));
 		int size = file.nextInt();
 		file.nextLine();
 		for(int i = 0; i<size; i++)
