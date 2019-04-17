@@ -1,8 +1,6 @@
-//© A+ Computer Science  -  www.apluscompsci.com
+//(c) A+ Computer Science
+//www.apluscompsci.com
 //Name -
-//Date -
-//Class -
-//Lab  -
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -26,7 +24,7 @@ public class Ball extends Block implements Collidable
 	}
 	
 	public Ball(int x, int y, int w, int h) {
-		super(x, y, w, h);
+		super(x, y, w, h, Color.white);
 	}
 	
 	public Ball(int x, int y, int w, int h, Color a) {
@@ -79,7 +77,6 @@ public class Ball extends Block implements Collidable
 		return ySpeed;
 	}
 	
-	@Override
 	public boolean didCollideLeft(Object obj) {
 		Ball ball = (Ball) obj;
 		if (ball.getX() < -20) {
@@ -116,8 +113,9 @@ public class Ball extends Block implements Collidable
 	//add a toString() method
 	
 	public String toString() {
-		return this.getX() + " " + this.getY() + " " + this.getWidth() 
+		String output =  this.getX() + " " + this.getY() + " " + this.getWidth() 
 		+ " " + this.getHeight() + " " + this.getColor() 
 		+ " " +  xSpeed + " " + ySpeed;
+		return output;
 	}
 }

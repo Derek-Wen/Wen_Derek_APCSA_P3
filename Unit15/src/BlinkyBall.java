@@ -1,8 +1,7 @@
-//© A+ Computer Science  -  www.apluscompsci.com
+    
+//(c) A+ Computer Science
+//www.apluscompsci.com
 //Name -
-//Date -
-//Class -
-//Lab  -
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -19,29 +18,38 @@ class BlinkyBall extends Ball
 
    public BlinkyBall(int x, int y)
    {
-	   super(x, y);
+
+	   super(x,y);
+
    }
 
    public BlinkyBall(int x, int y, int wid, int ht)
    {
-	   super(x, y, wid, ht);
+
+	   super(x,y,wid,ht);
+
    }
 
    public BlinkyBall(int x, int y, int wid, int ht, int xSpd, int ySpd)
    {
-	   super(x, y, wid, ht, Color.BLACK, xSpd, ySpd);
+
+	   super(x,y,wid,ht,Color.black, xSpd,ySpd);
+
    }
 
    public BlinkyBall(int x, int y, int wid, int ht, Color col, int xSpd, int ySpd)
    {
-	   super(x, y, wid, ht, col, xSpd, ySpd);
+
+	   super(x,y,wid,ht,col,xSpd,ySpd);
+
+
    }
 
    public Color randomColor()
    {
-   		int r = (int)(Math.random() * 256);	//use Math.random()
- 		int g = (int)(Math.random() * 256);
- 		int b = (int)(Math.random() * 256);
+   		int r = (int) (Math.random() * 256);		//use Math.random()
+ 		int g = (int) (Math.random() * 256);
+ 		int b = (int) (Math.random() * 256);
  		return new Color(r,g,b);
    }
 
