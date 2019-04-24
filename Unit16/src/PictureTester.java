@@ -84,6 +84,13 @@ public class PictureTester
 	  motor.mirrorVerticalRightToLeft();
 	  motor.explore();
   }
+ public static void testMirrorHorizontal()
+ {
+	  Picture motor = new Picture("src\\images\\redMotorcycle.jpg");
+	  motor.explore();
+	  motor.mirrorHorizontal();
+	  motor.explore();
+  }
   /** Main method for testing.  Every class can have a main
     * method in Java */
   public static void main(String[] args)
@@ -93,7 +100,7 @@ public class PictureTester
     // to run
     //testZeroBlue();
     
-    testkeepOnlyBlue();
+    //testkeepOnlyBlue();
     //testKeepOnlyRed();
     //testKeepOnlyGreen();
     //testNegate();
@@ -101,6 +108,7 @@ public class PictureTester
     //testFixUnderwater();
     //testMirrorVertical();
 	//testMirrorVerticalRightToLeft();
+	testMirrorHorizontal();
     //testMirrorTemple();
     //testMirrorArms();
     //testMirrorGull();
