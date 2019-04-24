@@ -201,6 +201,38 @@ public class Picture extends SimplePicture
 	  }
 	} 
   }
+  public void mirrorHorizontalBotToTop()
+  {
+    Pixel[][] pixels = this.getPixels2D();
+	Pixel leftPixel = null;
+	Pixel rightPixel = null;
+	int width = pixels.length;
+	for (int row = pixels.length -1; row > pixels.length/2; row--)
+	{
+	  for (int col = 0; col < pixels[0].length; col++)
+	  {
+	    leftPixel = pixels[row][col];
+	    rightPixel = pixels[width-1-row][col];
+	    rightPixel.setColor(leftPixel.getColor());
+	  }
+	} 
+  }
+  public void mirrorDiagonal()
+  {
+    Pixel[][] pixels = this.getPixels2D();
+	Pixel leftPixel = null;
+	Pixel rightPixel = null;
+	int height = pixels.length;
+	for (int row = 0; row < height; row++)
+	{
+	  for (int col = 0; col < row; col++)
+	  {
+	    leftPixel = pixels[row][col];
+	    rightPixel = pixels[col][row];
+	    rightPixel.setColor(leftPixel.getColor());
+	  }
+	} 
+  }
   /** Mirror just part of a picture of a temple */
   public void mirrorTemple()
   {
@@ -224,7 +256,37 @@ public class Picture extends SimplePicture
       }
     }
   }
-  
+  public void mirrorArms()
+  {
+	  int mirrorPoint = 194;
+	  Pixel leftPixel = null;
+	  Pixel rightPixel = null;
+	  Pixel[][] pixels = this.getPixels2D();
+	  for (int row = 163; row < mirrorPoint; row++) {
+		for(int col = 103; col < 291; col++){
+			leftPixel = pixels[row][col];
+			rightPixel = pixels[mirrorPoint-row+mirrorPoint][col];
+			rightPixel.setColor(leftPixel.getColor());
+		}
+	}
+  }
+ public void mirrorGull()
+ {
+	 int mirrorPoint = 342;
+	 Pixel leftPixel = null;
+	 Pixel rightPixel = null;
+	 Pixel[][] pixels = this.getPixels2D();
+	 for (int row = 234; row < 321; row++)
+	 {
+	  for (int col = 239; col < mirrorPoint; col++)
+      {
+		leftPixel = pixels[row][col];      
+		rightPixel = pixels[row]                      
+	    [mirrorPoint - col + mirrorPoint];
+	    rightPixel.setColor(leftPixel.getColor());
+	  }
+     }
+}
   /** copy from the passed fromPic to the
     * specified startRow and startCol in the
     * current picture
