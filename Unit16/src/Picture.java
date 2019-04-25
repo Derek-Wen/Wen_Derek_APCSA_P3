@@ -297,7 +297,20 @@ for (int fromCol = 0, toCol = startCol;
     this.mirrorVertical();
     this.write("src\\images\\640x480.jpg");
   }
-  
+  public void myCollage() {
+	Picture flower1 = new Picture("src\\Images\\flower1.jpg");
+	flower1.botToTop();
+	Picture flower2 = new Picture("src\\Images\\flower1.jpg");
+	flower2.negate();
+	this.copy(flower1,0,0);
+	this.copy(flower2,100,0);
+	this.copy(flower1,200,0);
+	Picture flower3 = new Picture("src\\Images\\flower1.jpg");
+	flower3.keepOnlyBlue();
+	this.copy(flower3,300,0);
+	this.copy(flower1,400,0);
+	this.mirrorVertical();
+ }
   
   /** Method to show large changes in color 
     * @param edgeDist the distance for finding edges

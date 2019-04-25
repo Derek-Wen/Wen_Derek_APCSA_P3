@@ -131,6 +131,11 @@ public class PictureTester
     canvas.createCollage();
     canvas.explore();
   }
+  public static void testMyCollage() {
+	  	Picture canvas = new Picture("src\\Images\\640x480.jpg");
+	    canvas.myCollage();
+	    canvas.explore();
+}
   public static void testCopy(){
 	  Picture copy =new Picture("src\\images\\640x480.jpg");
 	  Picture copied = new Picture("src\\images\\snowman.jpg");
@@ -176,7 +181,8 @@ public class PictureTester
     //testMirrorTemple();
 	//testMirrorArms();
     //testMirrorGull();
-    testCollage();
+    //testCollage();
+	//testMyCollage();
     //testCopy();
 	//testCopy2();
     //testEdgeDetection();
