@@ -60,7 +60,7 @@ public class PictureTester
   {
     Picture beach = new Picture("src\\images\\beach.jpg");
     beach.explore();
-    beach.negative();
+    beach.negate();
     beach.explore();
   }
   /** Method to test mirrorVertical */
@@ -176,7 +176,7 @@ public class PictureTester
     //testMirrorTemple();
 	//testMirrorArms();
     //testMirrorGull();
-    //testCollage();
+    testCollage();
     //testCopy();
 	//testCopy2();
     //testEdgeDetection();
