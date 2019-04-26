@@ -338,8 +338,6 @@ for (int fromCol = 0, toCol = startCol;
       }
     }
   }
-  
-  
   /* Main method for testing - each class in Java can have a main 
    * method 
    */
