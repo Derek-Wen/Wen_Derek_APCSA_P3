@@ -35,7 +35,7 @@ public class Pong extends Canvas implements KeyListener, Runnable {
 
 	public Pong() {
 		ball = new Ball(TheGame.WIDTH/ 2, TheGame.HEIGHT / 2, 10, 10, Color.black, 2, -2);
-		paddle = new Paddle(TheGame.WIDTH / 2, 400, 40, 40, Color.DARK_GRAY, 7);
+		paddle = new Paddle(TheGame.WIDTH / 2, 400, 40, 40, Color.blue, 7);
 		Breaks = new ArrayList<>();
 		nextLevel();
 

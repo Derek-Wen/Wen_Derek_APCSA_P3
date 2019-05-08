@@ -10,7 +10,7 @@ public class Break extends Block{
 		isVisible = true;
 	}
 	public Break(int x, int y, int width, int height){
-		super(x,y,width,height,getRandomColor());
+		super(x,y,width,height,Color.BLACK);
 		isVisible = true;
 	}
 	public boolean isColliding(Ball ball, Graphics window) {
@@ -32,11 +32,6 @@ public class Break extends Block{
 		if (isVisible) {
 			super.draw(window);
 		}
-	}
-	
-	public static Color getRandomColor() {
-		Random rand = new Random();
-		return new Color(rand.nextInt(255), rand.nextInt(255), rand.nextInt(255));
 	}
 
 }
