@@ -158,7 +158,15 @@ public class PictureTester
     swan.edgeDetection(10);
     swan.explore();
   }
-
+  public static void testEncodeDecode()
+  {
+    Picture beach = new Picture("src\\images\\beach.jpg");
+    Picture apple = new Picture("src\\images\\crybytes-apple_icon.jpg");
+    beach.explore();
+    beach.encode(apple);
+    beach.explore();
+    beach.decode().explore();
+  }
   
   /** Main method for testing.  Every class can have a main
     * method in Java */
@@ -187,6 +195,7 @@ public class PictureTester
     //testCopy();
 	//testCopy2();
     //testEdgeDetection();
+	  testEncodeDecode();
     
     //DON'T GO PAST THIS POINT
     
