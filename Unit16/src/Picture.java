@@ -29,8 +29,7 @@ public class Picture extends SimplePicture {
 	/**
 	 * Constructor that takes a file name and creates the picture
 	 * 
-	 * @param fileName
-	 *            the name of the file to create the picture from
+	 * @param fileName the name of the file to create the picture from
 	 */
 	public Picture(String fileName) {
 		// let the parent class handle this fileName
@@ -40,10 +39,8 @@ public class Picture extends SimplePicture {
 	/**
 	 * Constructor that takes the width and height
 	 * 
-	 * @param height
-	 *            the height of the desired picture
-	 * @param width
-	 *            the width of the desired picture
+	 * @param height the height of the desired picture
+	 * @param width  the width of the desired picture
 	 */
 	public Picture(int height, int width) {
 		// let the parent class handle this width and height
@@ -53,8 +50,7 @@ public class Picture extends SimplePicture {
 	/**
 	 * Constructor that takes a picture and creates a copy of that picture
 	 * 
-	 * @param copyPicture
-	 *            the picture to copy
+	 * @param copyPicture the picture to copy
 	 */
 	public Picture(Picture copyPicture) {
 		// let the parent class do the copy
@@ -64,8 +60,7 @@ public class Picture extends SimplePicture {
 	/**
 	 * Constructor that takes a buffered image
 	 * 
-	 * @param image
-	 *            the buffered image to use
+	 * @param image the buffered image to use
 	 */
 	public Picture(BufferedImage image) {
 		super(image);
@@ -223,12 +218,9 @@ public class Picture extends SimplePicture {
 	 * copy from the passed fromPic to the specified startRow and startCol in the
 	 * current picture
 	 * 
-	 * @param fromPic
-	 *            the picture to copy from
-	 * @param startRow
-	 *            the start row to copy to
-	 * @param startCol
-	 *            the start col to copy to
+	 * @param fromPic  the picture to copy from
+	 * @param startRow the start row to copy to
+	 * @param startCol the start col to copy to
 	 */
 	public void copy(Picture fromPic, int startRow, int startCol) {
 		Pixel fromPixel = null;
@@ -295,8 +287,7 @@ public class Picture extends SimplePicture {
 	/**
 	 * Method to show large changes in color
 	 * 
-	 * @param edgeDist
-	 *            the distance for finding edges
+	 * @param edgeDist the distance for finding edges
 	 */
 	public void edgeDetection(int edgeDist) {
 		Pixel mainPixel = null;
@@ -317,50 +308,46 @@ public class Picture extends SimplePicture {
 			}
 		}
 	}
-
-	public void encode(Picture messagePict) {
-		Pixel[][] messagePixels = messagePict.getPixels2D();
-		Pixel[][] currPixels = this.getPixels2D();
+	
+	public void encode(Picture messageImage) {
+		Pixel[][] pixels = this.getPixels2D();
+		Pixel[][] messagePixels = messageImage.getPixels2D();
+		
 		Pixel currPixel = null;
 		Pixel messagePixel = null;
+		
 		int count = 0;
+		
 		for (int row = 0; row < this.getHeight(); row++) {
 			for (int col = 0; col < this.getWidth(); col++) {
-				currPixel = currPixels[row][col];
-				currPixel.setRed();
+				currPixel = pixels[row][col];
+				currPixel.setRed(((int) currPixel.getRed() / 10) * 10 + ((int) Math.random() * 4));
+				count++;
 				messagePixel = messagePixels[row][col];
-				messagePixel.setRed(messagePixel.getRed() + 4);
-				if (messagePixel.getRed() == 4) {
-					count++;
+				if (messagePixel.colorDistance(Color.BLACK) < 50) {
+					currPixel.setRed(((int) currPixel.getRed() / 10) * 10 + 4);
 				}
 			}
 		}
 		System.out.println(count);
 	}
 
-	public Picture decode() {
-		Pixel[][] pixels = this.getPixels2D();
+	public void decode() {
+		Pixel[][]pixels = this.getPixels2D();
+		
 		int height = this.getHeight();
 		int width = this.getWidth();
-		Pixel currPixel = null;
-
-		Pixel messagePixel = null;
-		Picture messagePicture = new Picture(height, width);
-		Pixel[][] messagePixels = messagePicture.getPixels2D();
-		int count = 0;
+		
 		for (int row = 0; row < this.getHeight(); row++) {
 			for (int col = 0; col < this.getWidth(); col++) {
-				currPixel = pixels[row][col];
-				messagePixel = messagePixels[row][col];
-				if (currPixel.getRed() == 4) {
-					messagePixel.setColor(Color.BLACK);
-					count++;
+				if(pixels[row][col].getRed() == ((int) pixels[row][col].getRed() / 10) * 10 + 4){
+					pixels[row][col].setColor(Color.BLACK);
 				}
-				
+				else {
+					pixels[row][col].setColor(Color.WHITE);
+				}
 			}
 		}
-		System.out.println(count);
-		return messagePicture;
 	}
 
 	/*
